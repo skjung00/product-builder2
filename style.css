@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  padding: 0 16px;
   background-color: #ffffff;
   color: #222222;
   transition: background-color 0.3s, color 0.3s;
@@ -33,6 +34,53 @@ body.dark #theme-btn {
   border-color: #555;
 }
 
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 8px 20px;
+  font-size: 1rem;
+  border: 2px solid #4a90d9;
+  border-radius: 20px;
+  background: transparent;
+  color: #4a90d9;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+  background-color: #4a90d9;
+  color: #fff;
+}
+
+body.dark .tab {
+  border-color: #6aa3e8;
+  color: #6aa3e8;
+}
+
+body.dark .tab.active {
+  background-color: #6aa3e8;
+  color: #1a1a2e;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+  width: 100%;
+  max-width: 700px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+/* Lotto button */
 #lotto-btn {
   padding: 10px 24px;
   font-size: 1rem;
@@ -70,4 +118,142 @@ body.dark #theme-btn {
 body.dark #lotto-numbers span {
   background-color: #2a2a4a;
   color: #e0e0e0;
+}
+
+/* Stats section */
+#stats h2 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+/* Frequency chart */
+#freq-chart {
+  width: 100%;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.bar-label {
+  width: 28px;
+  text-align: right;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.bar-track {
+  flex: 1;
+  height: 16px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+body.dark .bar-track {
+  background-color: #2a2a4a;
+}
+
+.bar-fill {
+  height: 100%;
+  background-color: #4a90d9;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.bar-count {
+  width: 45px;
+  text-align: right;
+  font-size: 0.75rem;
+  margin-left: 8px;
+  color: #666;
+}
+
+body.dark .bar-count {
+  color: #aaa;
+}
+
+/* Stats row - Top/Bottom 10 */
+.stats-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.stats-card {
+  flex: 1;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 16px;
+  transition: background-color 0.3s;
+}
+
+body.dark .stats-card {
+  background-color: #22223a;
+}
+
+.stats-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.stats-card ol {
+  padding-left: 24px;
+  margin: 0;
+}
+
+.stats-card li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+/* Recent table */
+#recent-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+#recent-table th,
+#recent-table td {
+  padding: 8px 10px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+}
+
+body.dark #recent-table th,
+body.dark #recent-table td {
+  border-bottom-color: #3a3a5a;
+}
+
+#recent-table th {
+  background-color: #4a90d9;
+  color: #fff;
+  font-weight: 600;
+}
+
+body.dark #recent-table th {
+  background-color: #3a6aaa;
+}
+
+#recent-table td.bonus {
+  color: #e05050;
+  font-weight: bold;
+}
+
+#recent-table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+body.dark #recent-table tbody tr:hover {
+  background-color: #2a2a4a;
 }
